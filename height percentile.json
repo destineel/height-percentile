@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "xpython",
+      "display_name": "Python 3.13 (XPython)",
+      "language": "python"
+    },
+    "language_info": {
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "version": "3.13.1"
+    }
+  },
+  "nbformat_minor": 5,
+  "nbformat": 4,
+  "cells": [
+    {
+      "id": "f725fd14-9bef-4e3f-bd58-654dc95edaf3",
+      "cell_type": "code",
+      "source": "import numpy as np\nfrom scipy import stats\nheight =    np.loadtxt(\"heights - Sheet1.csv\",delimiter=\",\", dtype=float)\nmean_value = np.mean(height)\nprint(f\"Mean: {mean_value}\")\nstd_dev_value = np.std(height)\nprint(f\"Standard deveation: {std_dev_value}\")\n\n\ndef calculate_percentile_of_value(data, target_value):\n    sorted_data = np.sort(data)\n    count_less_than_target = np.sum(sorted_data < target_value)\n    count_equal_to_target = np.sum(sorted_data == target_value)\n\n    rank = count_less_than_target + (count_equal_to_target / 2)\n    percentile = (rank / len(sorted_data)) * 100\n    return percentile\n\ntarget_input = input(\"Enter the value for which you want to find the percentile: \")\ntry:\n    user_value = float(target_input)\nexcept ValueError:\n    print(\"Invalid input. Please enter a number for the target value.\")\n    exit()\n\nif dataset:\n    user_percentile = calculate_percentile_of_value(dataset, user_value)\n    print(f\"The value {user_value} is at the {user_percentile:.2f}th percentile in the dataset.\")\nelse:\n    print(\"The dataset is empty. Cannot calculate percentile.\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Mean: 67.9931135968\nStandard deveation: 1.9016407372498432\n"
+        },
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter the value for which you want to find the percentile:  70\n"
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "The value 70.0 is at the 50.00th percentile in the dataset.\n"
+        }
+      ],
+      "execution_count": 11
+    },
+    {
+      "id": "08c357a9-a79b-4a46-b170-a429fef5f1a4",
+      "cell_type": "code",
+      "source": "import numpy as np\nfrom scipy import stats\nheight =    np.loadtxt(\"heights - Sheet1.csv\",delimiter=\",\", dtype=float)\nmedian_value = np.median(height)\nprint(f\"Median: {median_value}\")\nstd_dev_value = np.std(height)\nprint(f\"Standard deveation: {std_dev_value}\")\n\ndef calculate_percentile_of_value(data, target_value):\n    sorted_data = np.sort(data)\n    count_less_than_target = np.sum(sorted_data < target_value)\n    count_equal_to_target = np.sum(sorted_data == target_value)\n\n    rank = count_less_than_target + (count_equal_to_target / 2)\n    percentile = (rank / len(sorted_data)) * 100\n    return percentile\n\ntarget_input = input(\"Enter the value for which you want to find the percentile: \")\ntry:\n    user_value = float(target_input)\nexcept ValueError:\n    print(\"Invalid input. Please enter a number for the target value.\")\n    exit()\n\nif dataset:\n    user_percentile = calculate_percentile_of_value(dataset, user_value)\n    print(f\"The value {user_value} is at the {user_percentile:.2f}th percentile in the dataset.\")\nelse:\n    print(\"The dataset is empty. Cannot calculate percentile.\")\n\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Median: 67.9957\nStandard deveation: 1.9016407372498432\n"
+        },
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter the value for which you want to find the percentile:  70\n"
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "The value 70.0 is at the 50.00th percentile in the dataset.\n"
+        }
+      ],
+      "execution_count": 13
+    },
+    {
+      "id": "5487e448-5659-4180-af13-e998aceb3f12",
+      "cell_type": "code",
+      "source": "import numpy as np\nfrom scipy import stats\nheight =    np.loadtxt(\"heights - Sheet1.csv\",delimiter=\",\", dtype=float)\nmode_result = stats.mode(height)\nmode_value = mode_result.mode\nprint(f\"Mode: {mode_value}\")\nstd_dev_value = np.std(height)\nprint(f\"Standard deveation: {std_dev_value}\")\n\n\ndef calculate_percentile_of_value(data, target_value):\n    sorted_data = np.sort(data)\n    count_less_than_target = np.sum(sorted_data < target_value)\n    count_equal_to_target = np.sum(sorted_data == target_value)\n\n    rank = count_less_than_target + (count_equal_to_target / 2)\n    percentile = (rank / len(sorted_data)) * 100\n    return percentile\n\ntarget_input = input(\"Enter the value for which you want to find the percentile: \")\ntry:\n    user_value = float(target_input)\nexcept ValueError:\n    print(\"Invalid input. Please enter a number for the target value.\")\n    exit()\n\nif dataset:\n    user_percentile = calculate_percentile_of_value(dataset, user_value)\n    print(f\"The value {user_value} is at the {user_percentile:.2f}th percentile in the dataset.\")\nelse:\n    print(\"The dataset is empty. Cannot calculate percentile.\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Mode: 65.65796\nStandard deveation: 1.9016407372498432\n"
+        },
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter the value for which you want to find the percentile:  70\n"
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "The value 70.0 is at the 50.00th percentile in the dataset.\n"
+        }
+      ],
+      "execution_count": 14
+    },
+    {
+      "id": "9da9aba3-83ef-4934-9e4c-52d5db927609",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "b37f7a6c-10a2-4b53-847e-3fb1b972777d",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}
