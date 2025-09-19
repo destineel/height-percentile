@@ -1,0 +1,120 @@
+import numpy as np
+from scipy import stats
+height =    np.loadtxt("heights - Sheet1.csv",delimiter=",", dtype=float)
+mean_value = np.mean(height)
+print(f"Mean: {mean_value}")
+std_dev_value = np.std(height)
+print(f"Standard deveation: {std_dev_value}")
+
+def calculate_percentile_of_value(data, target_value):
+    """
+    Calculates the percentile of a specific value within a dataset.
+
+    Args:
+        data (list or np.array): The dataset.
+        target_value (float or int): The value for which to find the percentile.
+
+    Returns:
+        float: The percentile of the target value.
+    """
+    sorted_data = np.sort(data)
+    count_less_than_target = np.sum(sorted_data < target_value)
+    count_equal_to_target = np.sum(sorted_data == target_value)
+
+    rank = count_less_than_target + (count_equal_to_target / 2)
+    percentile = (rank / len(sorted_data)) * 100
+    return percentile
+
+target_input = input("Enter the value for which you want to find the percentile: ")
+try:
+    user_value = float(target_input)
+except ValueError:
+    print("Invalid input. Please enter a number for the target value.")
+    exit()
+
+if dataset:
+    user_percentile = calculate_percentile_of_value(dataset, user_value)
+    print(f"The value {user_value} is at the {user_percentile:.2f}th percentile in the dataset.")
+else:
+    print("The dataset is empty. Cannot calculate percentile.")
+
+    import numpy as np
+from scipy import stats
+height =    np.loadtxt("heights - Sheet1.csv",delimiter=",", dtype=float)
+median_value = np.median(height)
+print(f"Median: {median_value}")
+std_dev_value = np.std(height)
+print(f"Standard deveation: {std_dev_value}")
+
+def calculate_percentile_of_value(data, target_value):
+    """
+    Calculates the percentile of a specific value within a dataset.
+
+    Args:
+        data (list or np.array): The dataset.
+        target_value (float or int): The value for which to find the percentile.
+
+    Returns:
+        float: The percentile of the target value.
+    """
+    sorted_data = np.sort(data)
+    count_less_than_target = np.sum(sorted_data < target_value)
+    count_equal_to_target = np.sum(sorted_data == target_value)
+
+    rank = count_less_than_target + (count_equal_to_target / 2)
+    percentile = (rank / len(sorted_data)) * 100
+    return percentile
+
+target_input = input("Enter the value for which you want to find the percentile: ")
+try:
+    user_value = float(target_input)
+except ValueError:
+    print("Invalid input. Please enter a number for the target value.")
+    exit()
+
+if dataset:
+    user_percentile = calculate_percentile_of_value(dataset, user_value)
+    print(f"The value {user_value} is at the {user_percentile:.2f}th percentile in the dataset.")
+else:
+    print("The dataset is empty. Cannot calculate percentile.")
+
+    import numpy as np
+from scipy import stats
+height =    np.loadtxt("heights - Sheet1.csv",delimiter=",", dtype=float)
+mode_result = stats.mode(height)
+mode_value = mode_result.mode
+print(f"Mode: {mode_value}")
+std_dev_value = np.std(height)
+print(f"Standard deveation: {std_dev_value}")
+
+def calculate_percentile_of_value(data, target_value):
+    """
+    Calculates the percentile of a specific value within a dataset.
+
+    Args:
+        data (list or np.array): The dataset.
+        target_value (float or int): The value for which to find the percentile.
+
+    Returns:
+        float: The percentile of the target value.
+    """
+    sorted_data = np.sort(data)
+    count_less_than_target = np.sum(sorted_data < target_value)
+    count_equal_to_target = np.sum(sorted_data == target_value)
+
+    rank = count_less_than_target + (count_equal_to_target / 2)
+    percentile = (rank / len(sorted_data)) * 100
+    return percentile
+
+target_input = input("Enter the value for which you want to find the percentile: ")
+try:
+    user_value = float(target_input)
+except ValueError:
+    print("Invalid input. Please enter a number for the target value.")
+    exit()
+
+if dataset:
+    user_percentile = calculate_percentile_of_value(dataset, user_value)
+    print(f"The value {user_value} is at the {user_percentile:.2f}th percentile in the dataset.")
+else:
+    print("The dataset is empty. Cannot calculate percentile.")
